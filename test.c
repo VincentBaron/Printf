@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 17:52:51 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/23 14:51:50 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/23 16:26:31 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,12 @@ int main()
     printf("%20X\n", s);
     printf("%0.3X\n", s);
     printf("%020X\n", s);
+
+    //random tests
+
+    printf("-- random tests --\n\n");
+
+    printf("%.d", 12345);
 
     return 0;
 }
