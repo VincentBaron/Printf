@@ -6,64 +6,66 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:43:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/23 20:48:47 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/25 23:48:09 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int   ft_flags_display(va_list args, t_flags flags, int bytes)
+void   ft_flags_display(va_list args, t_flags *general)
 {
-    (void)flags;
-    (void)args;
-    bytes++;
-    return (bytes);
+    void    (*conversion[8])(va_list args, t_flags *general) = {conv_c, conv_s/*, conv_p, conv_d, conv_i, conv_u, conv_x, conv_X*/};
+
+    conversion[general->converter](args, general);
 }
 
-void    ft_flags_check(char *format, t_flags *flags)
+void    ft_flags_check(char *format, t_flags *general)
 {
-    int i;
-    
-    i = 1;
-    while (format[i])
+    char *conv_index;
+
+    conv_index = "cspdiuxX";
+    while (format[++general->track])
     {
-        if(format[i] == '0' && flags->minus == 0)
-            flags->zero = 1;
-        if(format[i] == '-')
-            flags->minus = 1;
-        if(format[i] == '.')
-            flags->precision = 1;
-        if(format[i] == '*')
-            flags->wildcard = 1;
-        i++;
+        if(format[general->track] == '%')
+            return;
+        if(format[general->track] == '0' && general->minus == 0)
+            general->zero = 1;
+        if(format[general->track] == '-')
+            general->minus = 1;
+        if(format[general->track] == '.')
+            general->precision = 1;
+        if(format[general->track] == '*')
+            general->wildcard = 1;
+        if ((general->converter = check_charset(format[general->track], conv_index)) != - 1)
+            return;
+        general->track++;
     }
 }
 
 int ft_printf(char *format, ...)
 {
     va_list args;
-    t_flags flags;
-    int bytes;
+    t_flags general;
     
     va_start(args, format);
-    flags.bytes = 0;
-    flags.track = 0;
-    while (*format)
+    general.bytes = 0;
+    general.track = 0;
+    while (format[general.track])
     {
-        flags.converter = '\0';
-        flags.zero = 0;
-        flags.minus = 0;
-        flags.precision = 0;
-        flags.width = 0;
-        flags.wildcard = 0;
-        if (*format == '%' && *(format++) != '%')
+        general.converter = 0;
+        general.zero = 0;
+        general.minus = 0;
+        general.precision = 0;
+        general.width = 0;
+        general.wildcard = 0;
+        if (format[general.track] != '%')
+            ft_printchar(format[general.track], &general);
+        else
         {
-            ft_flags_check(format, &flags);
-            bytes = ft_flags_display(args, flags, bytes);
+            ft_flags_check(format, &general);
+            ft_flags_display(args, &general);
         }
-        ft_putchar_fd(*format, 1);
-        format++;
-        bytes++;
+        general.track++;
     }
-    return (bytes);
+    return (general.bytes);
 }

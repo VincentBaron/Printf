@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:50:33 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/23 20:44:59 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/26 00:01:38 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_flags
 {
-    char converter;
+    int converter;
     int zero;
     int minus;
     int precision;
@@ -31,6 +31,16 @@ typedef struct s_flags
 
 int ft_printf(char *format, ...);
 void    ft_flags_check(char *format, t_flags *flags);
-int   ft_flags_display(va_list args, t_flags flags, int bytes);
+void   ft_flags_display(va_list args, t_flags *general);
+void    conv_c(va_list args, t_flags *general);
+void    conv_s(va_list args, t_flags *general);
+void    conv_p(va_list args, t_flags *general);
+void    conv_d(va_list args, t_flags *general);
+void    conv_i(va_list args, t_flags *general);
+void    conv_u(va_list args, t_flags *general);
+void    conv_x(va_list args, t_flags *general);
+void    conv_X(va_list args, t_flags *general);
+void    ft_printchar(char c, t_flags *general);
+void    ft_printstr(char *str, t_flags *general);
 
 #endif
