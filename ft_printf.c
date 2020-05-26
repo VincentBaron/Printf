@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:43:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/25 23:48:09 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/26 18:30:53 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void   ft_flags_display(va_list args, t_flags *general)
 {
-    void    (*conversion[8])(va_list args, t_flags *general) = {conv_c, conv_s/*, conv_p, conv_d, conv_i, conv_u, conv_x, conv_X*/};
+    void    (*conversion[8])(va_list args, t_flags *general) = {conv_c, conv_s, conv_p, conv_d, conv_i, conv_u, conv_x, conv_X};
 
     conversion[general->converter](args, general);
 }

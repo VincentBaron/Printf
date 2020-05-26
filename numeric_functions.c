@@ -6,18 +6,9 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 00:29:04 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 00:32:13 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/26 16:23:02 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char *ft_dec_to_hex(int x)
-{
-    char *hex;
-    int len;
-
-    len = 0;
-    while (x > 0)
-        len++;
-}

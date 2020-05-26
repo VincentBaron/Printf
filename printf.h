@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:50:33 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 00:01:38 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/26 17:29:36 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void    conv_x(va_list args, t_flags *general);
 void    conv_X(va_list args, t_flags *general);
 void    ft_printchar(char c, t_flags *general);
 void    ft_printstr(char *str, t_flags *general);
+void    ft_printnbr(int n, t_flags *general);
+void    ft_printunbr(unsigned int n, t_flags *general);
 
 #endif
