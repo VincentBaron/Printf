@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 17:52:51 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 00:44:01 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/26 20:25:26 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
     printf("%s %*s\n", "Hello World", 5, "Hi again");
     printf("%5s\n", "Hello World");
     printf("%-20s |check offset\n", "Hello World");
-    printf("%20.0s\n", "Hello World");
+    printf("%20.3s\n", "Hello World");
 
     // p converter
     printf("-- p converter --\n\n");

@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:43:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 18:30:53 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 00:45:48 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void    ft_flags_check(char *format, t_flags *general)
     char *conv_index;
 
     conv_index = "cspdiuxX";
+    general->width = ft_atoi(&format[general->track + 1]);
     while (format[++general->track])
     {
         if(format[general->track] == '%')
@@ -33,7 +34,7 @@ void    ft_flags_check(char *format, t_flags *general)
         if(format[general->track] == '-')
             general->minus = 1;
         if(format[general->track] == '.')
-            general->precision = 1;
+            general->precision = ft_atoi(&(format[general->track + 1]));
         if(format[general->track] == '*')
             general->wildcard = 1;
         if ((general->converter = check_charset(format[general->track], conv_index)) != - 1)

@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:50:33 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 17:29:36 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/26 23:39:40 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,32 @@ typedef struct s_flags
     int bytes;
 }   t_flags;
 
+//ft_printf.c
+
 int ft_printf(char *format, ...);
 void    ft_flags_check(char *format, t_flags *flags);
 void   ft_flags_display(va_list args, t_flags *general);
+
+//conversion_functions_1.c
+
 void    conv_c(va_list args, t_flags *general);
 void    conv_s(va_list args, t_flags *general);
 void    conv_p(va_list args, t_flags *general);
 void    conv_d(va_list args, t_flags *general);
 void    conv_i(va_list args, t_flags *general);
+
+//conversion_functions_2.c
+
 void    conv_u(va_list args, t_flags *general);
 void    conv_x(va_list args, t_flags *general);
 void    conv_X(va_list args, t_flags *general);
+
+//general_functions.c
+
 void    ft_printchar(char c, t_flags *general);
 void    ft_printstr(char *str, t_flags *general);
 void    ft_printnbr(int n, t_flags *general);
 void    ft_printunbr(unsigned int n, t_flags *general);
+void    ft_printwidth(t_flags *general, char *s);
 
 #endif

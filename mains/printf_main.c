@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   printf_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 17:05:19 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 18:35:08 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 00:44:23 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../printf.h"
 
 int main()
 {
@@ -39,11 +39,14 @@ int main()
     printf("res: %d\n", res);*/
 
     //s case
-    /*printf("-- [s] case --\n\n");
+    printf("-- [s] case --\n\n");
     
-    res1 = ft_printf("Check start %s Check end", "Yo whagwan");
+    res1 = ft_printf("prinft: Check start %-70s Check end", "Yo whagwan");
     printf("\n");
-    printf("res: %d\n", res1);*/
+    res2 = printf("printf: Check start %-70s Check end", "Yo whagwan");
+    printf("\n");
+    printf("res1: %d\n", res1);
+    printf("res2: %d\n", res2);
 
     //p case
     /*printf("-- [p] case --\n\n");
@@ -101,14 +104,20 @@ int main()
     printf("printf res: %d\n", res2);*/
 
     //X case
-    printf("-- [X] case --\n\n");
+    /*printf("-- [X] case --\n\n");
     
     int s = -22345;
     
-    res1 = ft_printf("ft_printf: Check start %X Check end\n\n", s);
-    res2 = printf("printf: Check start %X Check end\n\n", s);
+    res1 = ft_printf("ft_printf: Check start %X str: %s Check end\n\n", s, "Hello");
+    res2 = printf("printf: Check start %X str: %s Check end\n\n", s, "Hello");
     printf("\n");
     printf("ft_printf res: %d\n", res1);
-    printf("printf res: %d\n", res2);
+    printf("printf res: %d\n", res2);*/
+
+    //Random test
+    /*printf("-- Random tests --\n\n");
+    (void)res2;
+
+    res1 = ft_printf("%20.3s", "World");*/
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 23:44:08 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 17:59:15 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 00:26:37 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,15 @@ void    ft_printunbr(unsigned int n, t_flags *general)
         n /= 10;
     }
     general->bytes += size;
+}
+
+void    ft_printwidth(t_flags *general, char *s)
+{
+    if (general->width < 0)
+        general->width *= -1;
+    while (general->width - ft_strlen(s) > 0)
+    {    
+        ft_printchar(' ', general);
+        general->width--;
+    }
 }
