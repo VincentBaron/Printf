@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:43:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/27 00:45:48 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 11:59:03 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void    ft_flags_check(char *format, t_flags *general)
             general->wildcard = 1;
         if ((general->converter = check_charset(format[general->track], conv_index)) != - 1)
             return;
-        general->track++;
     }
 }
 

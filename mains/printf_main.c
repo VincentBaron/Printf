@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 17:05:19 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/27 00:44:23 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 12:44:13 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int main()
     //s case
     printf("-- [s] case --\n\n");
     
-    res1 = ft_printf("prinft: Check start %-70s Check end", "Yo whagwan");
+    res1 = ft_printf("prinft: Check start %20.4s Check end", "Yo whagwan");
     printf("\n");
-    res2 = printf("printf: Check start %-70s Check end", "Yo whagwan");
+    res2 = printf("printf: Check start %20.4s Check end", "Yo whagwan");
     printf("\n");
     printf("res1: %d\n", res1);
     printf("res2: %d\n", res2);
