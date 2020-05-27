@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 17:05:19 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/27 13:02:30 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 01:23:46 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,36 @@ int main()
     printf("res: %d\n", res);*/
 
     //s case
-    printf("-- [s] case --\n\n");
+    /*printf("-- [s] case --\n\n");
     
-    res1 = ft_printf("|%20.4s|", "Yo whagwan");
+    res1 = ft_printf("|%20.*s|", 4, "Yo whagwan");
     printf("\n");
-    res2 = printf("|%20.4s|", "Yo whagwan");
+    res2 = printf("|%20.*s|", 4, "Yo whagwan");
     printf("\n");
     printf("res1: %d\n", res1);
-    printf("res2: %d\n", res2);
+    printf("res2: %d\n", res2);*/
 
     //p case
     /*printf("-- [p] case --\n\n");
     
     char *s = "c";
     
-    res1 = ft_printf("ft_printf: Check start %p Check end\n\n", s);
-    res2 = printf("printf: Check start %p Check end\n\n", s);
+    res1 = ft_printf("prinft: Check start %*p Check end\n\n", 20, s);
+    res2 = printf("printf: Check start %*p Check end\n\n", 20, s);
     printf("\n");
     printf("ft_printf res: %d\n", res1);
     printf("printf res: %d\n", res2);*/
 
     //d case
-    /*printf("-- [d] case --\n\n");
+    printf("-- [d] case --\n\n");
     
     int s = 13452;
     
-    res1 = ft_printf("ft_printf: Check start %d Check end\n\n", s);
-    res2 = printf("printf: Check start %d Check end\n\n", s);
+    res1 = ft_printf("prinft: Check start %-20d Check end\n\n", s);
+    res2 = printf("printf: Check start %-20d Check end\n\n", s);
     printf("\n");
     printf("ft_printf res: %d\n", res1);
-    printf("printf res: %d\n", res2);*/
+    printf("printf res: %d\n", res2);
 
     //i case
     /*printf("-- [i] case --\n\n");
