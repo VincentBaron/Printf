@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 16:12:07 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 16:11:40 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 17:40:26 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ void    conv_x(va_list args, t_flags *general)
     char *s;
 
     x = va_arg(args, unsigned int);
-    s = ft_strjoin("0x", ft_itoa_uhex(x));
-    printf("s: %s\n\n", s);
+    s = ft_itoa_uhex(x);
     if (general->minus == 0)
     {
         ft_printwidth_xX(general, s);

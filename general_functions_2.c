@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 00:41:09 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 16:55:05 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 17:40:14 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,10 @@ void    ft_printwidth_diu(t_flags *general, int n)
 
 void    ft_printwidth_xX(t_flags *general, char *str)
 {
-    int x;
     if (general->width < 0)
         general->width *= -1;
-    if (general->precision > (int)ft_strlen(str))
-        x = general->precision;
-    else
-        x = (int)ft_strlen(str);
-    while (general->width - x > 0)
+    while (general->width - (general->precision > (int)ft_strlen(str) ? general->precision : (int)ft_strlen(str)) > 0)
     {
-        printf("strlen(str): %d\n\n", (int)ft_strlen);
         if (general->zero == 1)
             ft_printchar('0', general);
         else
