@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:50:33 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 01:10:01 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 15:53:41 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ void    ft_printwidth_sp(t_flags *general, char *s);
 //general_functions_2.c
 
 int     nb_size(int n);
-void    ft_printwidth_diuxX(t_flags *general, int n);
+void    ft_printwidth_diu(t_flags *general, int n);
+void    ft_printwidth_xX(t_flags *general, char *str);
+void    ft_printxX(char *str, t_flags *general);
+char    *ft_capitalize(char *str);
 
 #endif

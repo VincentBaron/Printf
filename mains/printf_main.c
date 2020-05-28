@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 17:05:19 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 01:23:46 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 16:34:42 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main()
     printf("printf res: %d\n", res2);*/
 
     //d case
-    printf("-- [d] case --\n\n");
+    /*printf("-- [d] case --\n\n");
     
     int s = 13452;
     
@@ -68,15 +68,15 @@ int main()
     res2 = printf("printf: Check start %-20d Check end\n\n", s);
     printf("\n");
     printf("ft_printf res: %d\n", res1);
-    printf("printf res: %d\n", res2);
+    printf("printf res: %d\n", res2);*/
 
     //i case
     /*printf("-- [i] case --\n\n");
     
     int s = 13452;
     
-    res1 = ft_printf("ft_printf: Check start %i Check end\n\n", s);
-    res2 = printf("printf: Check start %i Check end\n\n", s);
+    res1 = ft_printf("printf: Check start %20.3i Check end\n\n", s);
+    res2 = printf("printf: Check start %20.3i Check end\n\n", s);
     printf("\n");
     printf("ft_printf res: %d\n", res1);
     printf("printf res: %d\n", res2);*/
@@ -93,7 +93,7 @@ int main()
     printf("printf res: %d\n", res2);*/
 
     //x case
-    /*printf("-- [x] case --\n\n");
+    printf("-- [x] case --\n\n");
     
     int s = -22345;
     
@@ -101,14 +101,14 @@ int main()
     res2 = printf("printf: Check start %x Check end\n\n", s);
     printf("\n");
     printf("ft_printf res: %d\n", res1);
-    printf("printf res: %d\n", res2);*/
+    printf("printf res: %d\n", res2);
 
     //X case
     /*printf("-- [X] case --\n\n");
     
     int s = -22345;
     
-    res1 = ft_printf("ft_printf: Check start %X str: %s Check end\n\n", s, "Hello");
+    res1 = ft_printf("%X %s\n\n", s, "Hello");
     res2 = printf("printf: Check start %X str: %s Check end\n\n", s, "Hello");
     printf("\n");
     printf("ft_printf res: %d\n", res1);

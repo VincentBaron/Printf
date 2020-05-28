@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 00:41:09 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 01:21:17 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 16:55:05 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int nb_size(int n)
     return (size);
 }
 
-void    ft_printwidth_diuxX(t_flags *general, int n)
+void    ft_printwidth_diu(t_flags *general, int n)
 {
     if (general->width < 0)
         general->width *= -1;
@@ -37,4 +37,48 @@ void    ft_printwidth_diuxX(t_flags *general, int n)
             ft_printchar(' ', general);
         general->width--;
     }
+}
+
+void    ft_printwidth_xX(t_flags *general, char *str)
+{
+    int x;
+    if (general->width < 0)
+        general->width *= -1;
+    if (general->precision > (int)ft_strlen(str))
+        x = general->precision;
+    else
+        x = (int)ft_strlen(str);
+    while (general->width - x > 0)
+    {
+        printf("strlen(str): %d\n\n", (int)ft_strlen);
+        if (general->zero == 1)
+            ft_printchar('0', general);
+        else
+            ft_printchar(' ', general);
+        general->width--;
+    }
+}
+
+void    ft_printxX(char *str, t_flags *general)
+{
+    while (general->precision - (int)ft_strlen(str) > 0)
+    {
+        ft_printchar('0', general);
+        general->precision--;
+    }
+    ft_putstr_fd(str, 1);
+    general->bytes += ft_strlen(str);
+}
+
+char    *ft_capitalize(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        str[i] = ft_toupper(str[i]);
+        i++;
+    }
+    return (str);
 }

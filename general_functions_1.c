@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 23:44:08 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 01:20:06 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 15:45:55 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,12 @@ void    ft_printnbr(int n, t_flags *general)
 
 void    ft_printunbr(unsigned int n, t_flags *general)
 {
-    ft_putunbr_fd(n, 1);
+    while (general->precision - nb_size(n) > 0)
+    {
+        ft_printchar('0', general);
+        general->precision--;
+    }
+    ft_putnbr_fd(n, 1);
     general->bytes += nb_size(n);
 }
 

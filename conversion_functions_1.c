@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 16:12:07 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 01:11:21 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/28 15:56:06 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void    conv_d(va_list args, t_flags *general)
     d = va_arg(args, int);
     if (general->minus == 0)
     {
-        ft_printwidth_diuxX(general, d);
+        ft_printwidth_diu(general, d);
         ft_printnbr(d, general);
     }
     else
     {
         ft_printnbr(d, general);
-        ft_printwidth_diuxX(general, d);
+        ft_printwidth_diu(general, d);
     }
 }
 
@@ -78,5 +78,14 @@ void    conv_i(va_list args, t_flags *general)
     int i;
 
     i = va_arg(args, int);
-    ft_printnbr(i, general);
+    if (general->minus == 0)
+    {
+        ft_printwidth_diu(general, i);
+        ft_printnbr(i, general);
+    }
+    else
+    {
+        ft_printnbr(i, general);
+        ft_printwidth_diu(general, i);
+    }
 }
