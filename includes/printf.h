@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:50:33 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 18:13:55 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/01 00:11:12 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <stdio.h>
 # include <stdio.h>
-# include "libft.h"
+# include <stdarg.h>
+# include "../Libft/libft.h"
 
 typedef struct s_flags
 {

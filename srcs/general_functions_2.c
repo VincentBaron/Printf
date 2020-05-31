@@ -6,11 +6,11 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 00:41:09 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 17:40:14 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/30 21:15:24 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../includes/printf.h"
 
 int nb_size(int n)
 {

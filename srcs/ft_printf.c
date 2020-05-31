@@ -6,11 +6,11 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:43:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/28 01:15:06 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/30 21:15:29 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../includes/printf.h"
 
 void   ft_flags_display(va_list args, t_flags *general)
 {

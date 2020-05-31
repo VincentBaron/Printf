@@ -6,31 +6,44 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/28 17:52:53 by vbaron            #+#    #+#              #
-#    Updated: 2020/05/29 23:53:20 by vbaron           ###   ########.fr        #
+#    Updated: 2020/06/01 00:38:22 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+SRC = 		srcs/ft_printf.c \
+			srcs/conversion_functions_1.c \
+			srcs/conversion_functions_2.c \
+			srcs/general_functions_1.c \
+			srcs/general_functions_2.c \
 
-SRC = 	./srcs/*.c \ 
-		./Libft/*.c, \ 
-		./includes/*.c \
+OBJS = 		${SRC:.c=.o}
 
-SRC_TEST = ./mains/printf_main.c
+INCLUDES = 	includes
 
-all: 
-			gcc -Wall -Werror -Wextra $(SRC)
+NAME = 		libftprintf.a
 
-alltest: 
-			all 
-			$(SRC_TEST)
+CC = 		gcc
+
+FLAGS = 	-Wall -Werror -Wextra
+
+all:		${NAME}
+
+-c.o:
+			${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I${INCLUDES} 
+
+${NAME}: 	${OBJS}
+			make -C Libft
+			cp Libft/libft.a ./$(NAME)
+			ar -rcs ${NAME} ${OBJS}
 
 clean:
-	rm -f *.o
+			rm -f ${OBJS}
+			make clean -C Libft
 
-fclean: 
-		clean
-		rm -f $(NAME)
+fclean: 	clean
+			rm -f ${NAME}
+			make fclean -C Libft
 
-re: fclean all
+re: 		fclean all
 
+.PHONY: clean all fclean re
