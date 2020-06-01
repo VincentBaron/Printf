@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/28 17:52:53 by vbaron            #+#    #+#              #
-#    Updated: 2020/06/01 00:38:22 by vbaron           ###   ########.fr        #
+#    Updated: 2020/06/01 12:40:35 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,12 @@ NAME = 		libftprintf.a
 
 CC = 		gcc
 
-FLAGS = 	-Wall -Werror -Wextra
+FLAGS =  	-Wall -Werror -Wextra
 
 all:		${NAME}
 
 -c.o:
-			${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I${INCLUDES} 
+			${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I${INCLUDES}
 
 ${NAME}: 	${OBJS}
 			make -C Libft
