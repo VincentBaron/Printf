@@ -104,7 +104,7 @@ int main()
     printf("printf res: %d\n", res2);*/
 
     //X case
-    printf("-- [X] case --\n\n");
+    /*printf("-- [X] case --\n\n");
     
     int s = 22;
     
@@ -112,12 +112,14 @@ int main()
     res2 = printf("printf: Check start %8.4X Check end\n\n", s);
     printf("\n");
     printf("ft_printf res: %d\n", res1);
-    printf("printf res: %d\n", res2);
+    printf("printf res: %d\n", res2);*/
 
     //Random test
-    /*printf("-- Random tests --\n\n");
-    (void)res2;
+    printf("-- Random tests --\n\n");
 
-    res1 = ft_printf("%20.3s", "World");*/
+    res1 = ft_printf("%7.5s", "yolo");
+    printf("\n%d\n\n", res1);
+    res2 = printf("%7.5s", "yolo");
+    printf("\n%d", res2);
     return 0;
 }

@@ -14,7 +14,7 @@
 
 void   ft_flags_display(va_list args, t_flags *general)
 {
-    void    (*conversion[8])(va_list args, t_flags *general) = {conv_c, conv_s, conv_p, conv_d, conv_i, conv_u, conv_x, conv_X};
+    void    (*conversion[9])(va_list args, t_flags *general) = {conv_per, conv_c, conv_s, conv_p, conv_d, conv_i, conv_u, conv_x, conv_X};
 
     conversion[general->converter](args, general);
 }
@@ -30,24 +30,22 @@ void    replace_wildcard(t_flags *general, va_list args)
         general->width = x;
 }
 
-void    ft_flags_check(char *format, t_flags *general, va_list args)
+int    ft_flags_check(char *format, t_flags *general, va_list args)
 {
     char *conv_index;
 
-    conv_index = "cspdiuxX";
+    conv_index = "%cspdiuxX";
     general->width = ft_atoi(&format[general->track + 1]);
     if (format[general->track + 1] == '0')
         general->zero = 1;
     while (format[++general->track])
     {
-        if(format[general->track] == '%')
-            return;
-        if(format[general->track] == '-')
+        if (format[general->track] == '-')
         {
             general->minus = 1;
             general->zero = 0;
         }
-        if(format[general->track] == '.')
+        if (format[general->track] == '.')
         {
             general->precision = ft_atoi(&(format[general->track + 1]));
             general->zero = 0;
@@ -55,8 +53,9 @@ void    ft_flags_check(char *format, t_flags *general, va_list args)
         if(format[general->track] == '*')
             replace_wildcard(general, args);
         if ((general->converter = check_charset(format[general->track], conv_index)) != - 1)
-            return;
+            return (1);
     }
+    return (0);
 }
 
 int ft_printf(char *format, ...)
@@ -69,7 +68,7 @@ int ft_printf(char *format, ...)
     general.track = 0;
     while (format[general.track])
     {
-        general.converter = 0;
+        general.converter = -1;
         general.zero = 0;
         general.minus = 0;
         general.precision = -1;
@@ -79,7 +78,8 @@ int ft_printf(char *format, ...)
             ft_printchar(format[general.track], &general);
         else
         {
-            ft_flags_check(format, &general, args);
+            if (!ft_flags_check(format, &general, args))
+                return 0;
             ft_flags_display(args, &general);
         }
         general.track++;

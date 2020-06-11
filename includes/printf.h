@@ -28,24 +28,27 @@ typedef struct s_flags
     int wildcard;
     int track;
     int bytes;
+    int percent;
 }   t_flags;
 
 //ft_printf.c
 
 int     ft_printf(char *format, ...);
-void    ft_flags_check(char *format, t_flags *general, va_list args);
+int     ft_flags_check(char *format, t_flags *general, va_list args);
 void    ft_flags_display(va_list args, t_flags *general);
+//int     errors_check(char *format);
 
 //conversion_functions_1.c
 
+void    conv_per(va_list args, t_flags *general);
 void    conv_c(va_list args, t_flags *general);
 void    conv_s(va_list args, t_flags *general);
 void    conv_p(va_list args, t_flags *general);
 void    conv_d(va_list args, t_flags *general);
-void    conv_i(va_list args, t_flags *general);
 
 //conversion_functions_2.c
 
+void    conv_i(va_list args, t_flags *general);
 void    conv_u(va_list args, t_flags *general);
 void    conv_x(va_list args, t_flags *general);
 void    conv_X(va_list args, t_flags *general);

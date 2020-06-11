@@ -18,9 +18,9 @@ int main()
     //-0.*
 
     // c converter
-    printf("-- c converter --\n\n");
+    /*printf("-- c converter --\n\n");
     
-    printf("%c\n", 'h');
+    printf("%c\n", 'h');*/
     /*printf("%c %*c\n", 'h', 5, 'i');
     printf("%5c\n", 'h');
     printf("%0.5c\n", 'h');
@@ -116,7 +116,7 @@ int main()
 
     printf("-- random tests --\n\n");
 
-    printf("test: %9.6x", 2134);
+    printf("test: %%");
 
     //printf("%30", 12345);
 

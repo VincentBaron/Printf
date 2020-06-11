@@ -12,6 +12,22 @@
 
 #include "../includes/printf.h"
 
+void    conv_per(va_list args, t_flags *general)
+{
+    (void)args;
+
+    if (general->minus == 0)
+    {
+        ft_printwidth_sp(general, "%");
+        ft_printchar('%', general);
+    }
+    else
+    {
+        ft_printchar('%', general);
+        ft_printwidth_sp(general, "%");
+    }
+}
+
 void    conv_c(va_list args, t_flags *general)
 {
     char c;
@@ -70,22 +86,5 @@ void    conv_d(va_list args, t_flags *general)
     {
         ft_printnbr(d, general);
         ft_printwidth_diu(general, d);
-    }
-}
-
-void    conv_i(va_list args, t_flags *general)
-{
-    int i;
-
-    i = va_arg(args, int);
-    if (general->minus == 0)
-    {
-        ft_printwidth_diu(general, i);
-        ft_printnbr(i, general);
-    }
-    else
-    {
-        ft_printnbr(i, general);
-        ft_printwidth_diu(general, i);
     }
 }

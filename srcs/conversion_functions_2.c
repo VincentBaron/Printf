@@ -12,6 +12,23 @@
 
 #include "../includes/printf.h"
 
+void    conv_i(va_list args, t_flags *general)
+{
+    int i;
+
+    i = va_arg(args, int);
+    if (general->minus == 0)
+    {
+        ft_printwidth_diu(general, i);
+        ft_printnbr(i, general);
+    }
+    else
+    {
+        ft_printnbr(i, general);
+        ft_printwidth_diu(general, i);
+    }
+}
+
 void    conv_u(va_list args, t_flags *general)
 {
     unsigned int u;

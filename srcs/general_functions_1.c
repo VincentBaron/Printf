@@ -23,17 +23,19 @@ void    ft_printstr(char *str, t_flags *general)
     int i;
 
     i = 0;
-    if (general->precision == -1)
+    if (general->precision == -1 || general->precision > (int)ft_strlen(str))
+    {
         ft_putstr_fd(str, 1);
+        general->bytes += ft_strlen(str);
+    }
     else
     {
         while (i < general->precision && str[i])
         {
-            ft_putchar_fd(str[i], 1);
+            ft_printchar(str[i], general);
             i++;
         }
     }
-    general->bytes += (general->precision != -1 ? i : ft_strlen(str));
 }
 
 void    ft_printnbr(int n, t_flags *general)
@@ -60,12 +62,15 @@ void    ft_printunbr(unsigned int n, t_flags *general)
 
 void    ft_printwidth_sp(t_flags *general, char *s)
 {
-  
+    if (general->width == 0)
+        return;
+    if (general->converter == 0)
+        general->precision = -1;
     if (general->width < 0)
         general->width *= -1;
-    while (general->width - (general->precision > 0 ? general->precision : ft_strlen(s)) > 0)
+    while (general->width - ((general->precision > 0 && general->precision < (int)ft_strlen(s)) ? general->precision : (int)ft_strlen(s)) > 0)
     {
-        ft_printchar(' ', general);
+        (general->zero == 1 ? ft_printchar('0', general) : ft_printchar(' ', general));
         general->width--;
     }
 }
