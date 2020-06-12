@@ -40,6 +40,11 @@ void    ft_printstr(char *str, t_flags *general)
 
 void    ft_printnbr(int n, t_flags *general)
 {
+    if (n < 0)
+    {
+        n *= -1;
+        ft_printchar('-', general);
+    }
     while (general->precision - nb_size(n) > 0)
     {
         ft_printchar('0', general);

@@ -41,6 +41,8 @@ void    conv_s(va_list args, t_flags *general)
     char *s;
 
     s = va_arg(args, char *);
+    if (s == NULL)
+        s = "(null)";
     if (general->minus == 0)
     {
         ft_printwidth_sp(general, s);

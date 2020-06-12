@@ -117,9 +117,9 @@ int main()
     //Random test
     printf("-- Random tests --\n\n");
 
-    res1 = ft_printf("%7.5s", "yolo");
+    res1 = ft_printf("%7i", -14);
     printf("\n%d\n\n", res1);
-    res2 = printf("%7.5s", "yolo");
+    res2 = printf("%7i", -14);
     printf("\n%d", res2);
     return 0;
 }

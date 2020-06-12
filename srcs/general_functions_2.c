@@ -17,6 +17,8 @@ int nb_size(int n)
     int size;
 
     size = 0;
+    if (n <= 0)
+        size++;
     while (n != 0)
     {
         size++;
