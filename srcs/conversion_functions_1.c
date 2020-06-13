@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 16:12:07 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/30 21:15:43 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/13 16:53:12 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void    conv_per(va_list args, t_flags *general)
 
     if (general->minus == 0)
     {
-        ft_printwidth_sp(general, "%");
+        ft_printwidth_s(general, "%");
         ft_printchar('%', general);
     }
     else
     {
         ft_printchar('%', general);
-        ft_printwidth_sp(general, "%");
+        ft_printwidth_s(general, "%");
     }
 }
 
@@ -33,7 +33,16 @@ void    conv_c(va_list args, t_flags *general)
     char c;
 
     c = va_arg(args, int);
-    ft_printchar(c, general);
+    if (general->minus == 0)
+    {
+        ft_printwidth_s(general, "%");
+        ft_printchar(c, general);
+    }
+    else
+    {
+        ft_printchar(c, general);
+        ft_printwidth_s(general, "%");
+    }
 }
 
 void    conv_s(va_list args, t_flags *general)
@@ -45,32 +54,40 @@ void    conv_s(va_list args, t_flags *general)
         s = "(null)";
     if (general->minus == 0)
     {
-        ft_printwidth_sp(general, s);
+        ft_printwidth_s(general, s);
         ft_printstr(s, general);
     }
     else
     {
         ft_printstr(s, general);
-        ft_printwidth_sp(general, s);
+        ft_printwidth_s(general, s);
     }
 }
 
 void    conv_p(va_list args, t_flags *general)
 {
-    int p;
+    unsigned long int p;
     char *s;
 
-    p = va_arg(args, int);
-    s = ft_strjoin("0x", ft_itoa_hex(p));
+    p = va_arg(args, unsigned long int);
+    if (general->width == 0 && general->precision == 0)
+    {
+        ft_putstr_fd("0x", 1);
+        general->bytes += 2;
+        return;
+    }
+    s = ft_itoa_hex(p);
     if (general->minus == 0)
     {
-        ft_printwidth_sp(general, s);
-        ft_printstr(s, general);
+        ft_printwidth_pxX(general, s);
+        ft_printstr("0x", general);
+        ft_printpxX(s, general);
     }
     else
     {
-        ft_printstr(s, general);
-        ft_printwidth_sp(general, s);
+        ft_printstr("0x", general);
+        ft_printpxX(s, general);
+        ft_printwidth_pxX(general, s);
     }
 }
 
@@ -79,6 +96,11 @@ void    conv_d(va_list args, t_flags *general)
     int d;
 
     d = va_arg(args, int);
+    if (general->zero == 1 && general->width > 0 && general->precision == -1)
+    {
+        general->precision = general->width - (d < 0 ? 1 : 0);
+        general->width = 0;
+    }
     if (general->minus == 0)
     {
         ft_printwidth_diu(general, d);

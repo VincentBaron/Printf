@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:17:12 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 18:23:49 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/13 15:57:32 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void (*del)(void *));
 
 char			*ft_strndup(char *temp, int n);
 int				check_charset(char c, char const *set);
-char			*ft_itoa_hex(int n);
+char			*ft_itoa_hex(long n);
 char			*ft_itoa_uhex(unsigned int n);
 void			ft_putunbr_fd(unsigned int n, int fd);
 

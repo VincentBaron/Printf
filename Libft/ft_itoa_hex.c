@@ -6,13 +6,13 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:12:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/26 16:41:24 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/13 16:03:05 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*alloc_itoa_hex(unsigned int n, int size, int sign)
+char	*alloc_itoa_hex(unsigned long int n, int size, int sign)
 {
 	char	*itoa;
 
@@ -36,7 +36,7 @@ char	*alloc_itoa_hex(unsigned int n, int size, int sign)
 	return (itoa);
 }
 
-int		get_size_hex(int n)
+int		get_size_hex(long n)
 {
 	int	size;
 
@@ -56,9 +56,9 @@ int		get_size_hex(int n)
 	return (size);
 }
 
-char	*ft_itoa_hex(int n)
+char	*ft_itoa_hex(long n)
 {
-	unsigned int	nbx;
+	unsigned long int	nbx;
 	int				size;
 	int				sign;
 	char			*itoa;
@@ -67,11 +67,11 @@ char	*ft_itoa_hex(int n)
 	sign = 0;
 	if (n < 0)
 	{
-		nbx = (unsigned int)(-1 * n);
+		nbx = (unsigned long int)(-1 * n);
 		sign++;
 	}
 	else
-		nbx = (unsigned int)n;
+		nbx = (unsigned  long int)n;
 	itoa = alloc_itoa_hex(nbx, size, sign);
 	return (itoa);
 }

@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/28 17:52:53 by vbaron            #+#    #+#              #
-#    Updated: 2020/06/01 12:40:35 by vbaron           ###   ########.fr        #
+#    Updated: 2020/06/13 10:58:22 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRC = 		srcs/ft_printf.c \
 			srcs/conversion_functions_2.c \
 			srcs/general_functions_1.c \
 			srcs/general_functions_2.c \
+			srcs/general_functions_3.c \
 
 OBJS = 		${SRC:.c=.o}
 

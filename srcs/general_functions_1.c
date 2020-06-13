@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 23:44:08 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/30 21:15:39 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/13 16:48:06 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,20 @@ void    ft_printstr(char *str, t_flags *general)
 
 void    ft_printnbr(int n, t_flags *general)
 {
+    int x;
+    
+    x = general->precision;
+    if (x == 0)
+        return;
     if (n < 0)
     {
         n *= -1;
         ft_printchar('-', general);
     }
-    while (general->precision - nb_size(n) > 0)
+    while (x - nb_size(n) > 0)
     {
         ft_printchar('0', general);
-        general->precision--;
+        x--;
     }
     ft_putnbr_fd(n, 1);
     general->bytes += nb_size(n);
@@ -56,16 +61,26 @@ void    ft_printnbr(int n, t_flags *general)
 
 void    ft_printunbr(unsigned int n, t_flags *general)
 {
-    while (general->precision - nb_size(n) > 0)
+    int x;
+    
+    x = general->precision;
+    if (x == 0)
+        return;
+    if (n < 0)
+    {
+        n *= -1;
+        ft_printchar('-', general);
+    }
+    while (x - nb_size(n) > 0)
     {
         ft_printchar('0', general);
-        general->precision--;
+        x--;
     }
     ft_putnbr_fd(n, 1);
     general->bytes += nb_size(n);
 }
 
-void    ft_printwidth_sp(t_flags *general, char *s)
+void    ft_printwidth_s(t_flags *general, char *s)
 {
     if (general->width == 0)
         return;
