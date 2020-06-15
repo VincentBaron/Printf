@@ -6,13 +6,13 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 00:41:09 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/13 15:06:29 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 17:19:55 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
 
-int nb_size(int n)
+int nb_size(long int n)
 {
     int size;
 

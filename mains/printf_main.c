@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 17:05:19 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/13 16:51:31 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 15:45:30 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,9 @@ int main()
     //Random test
     printf("-- Random tests --\n\n");
 
-    res1 = ft_printf("%2c", 'c');
+    res1 = ft_printf("%5.p", NULL);
     printf("\n%d\n\n", res1);
-    res2 = printf("%2c", 'c');
+    res2 = printf("%5.p", NULL);
     printf("\n%d", res2);
     return 0;
 }

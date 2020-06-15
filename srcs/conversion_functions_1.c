@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 16:12:07 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/13 16:53:12 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 17:19:12 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    conv_s(va_list args, t_flags *general)
 
     s = va_arg(args, char *);
     if (s == NULL)
-        s = "(null)";
+       s = "(null)";
     if (general->minus == 0)
     {
         ft_printwidth_s(general, s);
@@ -93,7 +93,7 @@ void    conv_p(va_list args, t_flags *general)
 
 void    conv_d(va_list args, t_flags *general)
 {
-    int d;
+    long int d;
 
     d = va_arg(args, int);
     if (general->zero == 1 && general->width > 0 && general->precision == -1)

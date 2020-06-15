@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:14:40 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/30 17:35:14 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 14:12:02 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 	unsigned int	nx;
 
 	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
 		nx = -1 * n;
-	}
 	else
 		nx = n;
 	if (nx >= 10)

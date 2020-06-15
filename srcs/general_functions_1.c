@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 23:44:08 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/13 16:48:06 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 16:12:42 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void    ft_printstr(char *str, t_flags *general)
     }
 }
 
-void    ft_printnbr(int n, t_flags *general)
+void    ft_printnbr(long int n, t_flags *general)
 {
     int x;
     
@@ -76,7 +76,7 @@ void    ft_printunbr(unsigned int n, t_flags *general)
         ft_printchar('0', general);
         x--;
     }
-    ft_putnbr_fd(n, 1);
+    ft_putunbr_fd(n, 1);
     general->bytes += nb_size(n);
 }
 
@@ -88,7 +88,7 @@ void    ft_printwidth_s(t_flags *general, char *s)
         general->precision = -1;
     if (general->width < 0)
         general->width *= -1;
-    while (general->width - ((general->precision > 0 && general->precision < (int)ft_strlen(s)) ? general->precision : (int)ft_strlen(s)) > 0)
+    while (general->width - ((general->precision >= 0 && general->precision < (int)ft_strlen(s)) ? general->precision : (int)ft_strlen(s)) > 0)
     {
         (general->zero == 1 ? ft_printchar('0', general) : ft_printchar(' ', general));
         general->width--;

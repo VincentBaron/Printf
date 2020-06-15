@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 16:43:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/13 15:15:11 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 15:27:33 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,18 @@ void    replace_wildcard(t_flags *general, va_list args)
     int x;
 
     x = va_arg(args, int);
-    if (general->precision != -1)
+    if (general->minus == 0 && x < 0)
+        general->minus = 1;
+    if (general->precision != -1 && x >= 0)
         general->precision = x;
-    else
+    if (general->precision != -1 && x < 0)
+        general->precision = -1;
+    else if (general->precision == -1)
+    {
         general->width = x;
+        if (general->width < 0)
+            general->zero = 0;
+    }
 }
 
 int    ft_flags_check(char *format, t_flags *general, va_list args)

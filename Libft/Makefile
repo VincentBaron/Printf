@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/27 13:17:26 by vbaron            #+#    #+#              #
-#    Updated: 2020/06/01 13:15:41 by vbaron           ###   ########.fr        #
+#    Updated: 2020/06/15 14:13:50 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRC			=	ft_atoi.c    			\
 				ft_itoa_hex.c 			\
 				ft_itoa_uhex.c 			\
 				check_charset.c 		\
+				ft_putunbr_fd.c 		\
 
 SRC_BONUS	=	ft_lstnew.c		\
 				ft_lstsize.c		\
