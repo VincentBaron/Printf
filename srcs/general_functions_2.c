@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 00:41:09 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/15 17:19:55 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/15 18:11:06 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void    ft_printwidth_pxX(t_flags *general, char *str)
     if (general->width < 0)
         general->width *= -1;
     z = z_calculator(general, str);
+    if (str == NULL)
+        z = 2;
     while (general->width - z > 0)
     {
         if (general->zero == 1)
