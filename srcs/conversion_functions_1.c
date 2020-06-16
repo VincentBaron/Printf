@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 16:12:07 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/16 12:21:14 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/16 18:46:15 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	conv_p(va_list args, t_flags *general)
 		ft_printpxbigx(s, general);
 		ft_printwidth_pxbigx(general, s);
 	}
+	free(s);
 }
 
 void	conv_d(va_list args, t_flags *general)
