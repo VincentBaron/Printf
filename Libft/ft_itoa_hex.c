@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:12:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/06/13 16:03:05 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/06/16 12:33:14 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ int		get_size_hex(long n)
 char	*ft_itoa_hex(long n)
 {
 	unsigned long int	nbx;
-	int				size;
-	int				sign;
-	char			*itoa;
+	int					size;
+	int					sign;
+	char				*itoa;
 
 	size = get_size_hex(n);
 	sign = 0;
@@ -71,7 +71,7 @@ char	*ft_itoa_hex(long n)
 		sign++;
 	}
 	else
-		nbx = (unsigned  long int)n;
+		nbx = (unsigned long int)n;
 	itoa = alloc_itoa_hex(nbx, size, sign);
 	return (itoa);
 }
